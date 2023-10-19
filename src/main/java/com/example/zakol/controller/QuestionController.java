@@ -1,9 +1,11 @@
-package com.example.zakol;
+package com.example.zakol.controller;
 
 
+import com.example.zakol.repository.Repository;
+import com.example.zakol.entity.Vopros;
+import com.example.zakol.service.PlayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -13,24 +15,20 @@ import java.util.Map;
 public class QuestionController {
 
     @Autowired
-     Repository repository;
+    Repository repository;
+    @Autowired
+    PlayService playService; // todo в кострукор
 
 
     public QuestionController() {
     }
-@Autowired // todo Лишняя ?
+
+    @Autowired // todo Лишняя ?
     // Конструктор для инициализации списка вопросов
     public QuestionController(Repository repository) {
 
         // Добавьте остальные вопросы и изображения
     }
-
-//    // GET-запрос для получения начального вопроса и изображения
-//    @GetMapping("/")
-//    public String getInitialQuestion() {
-//        System.out.println("Вызван getInitialQuestiongetInitialQuestiongetInitialQuestiongetInitialQuestion");
-//        return "Akenator.html";
-//    }
 
 
     // POST-запрос для обработки ответов пользователя

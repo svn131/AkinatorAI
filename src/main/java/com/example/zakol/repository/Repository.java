@@ -1,5 +1,7 @@
-package com.example.zakol;
+package com.example.zakol.repository;
 
+import com.example.zakol.entity.Vopros;
+import com.example.zakol.entity.Znamenitost;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -8,9 +10,9 @@ import java.util.List;
 public class Repository {
 
 
-    List<Vopros> voprosy  ;
+    List<Vopros> voprosy;
 
-    List<Znamenitost>  znamenitost ;
+    List<Znamenitost> znamenitost;
 
 
     public List<Vopros> getVoprosy() {

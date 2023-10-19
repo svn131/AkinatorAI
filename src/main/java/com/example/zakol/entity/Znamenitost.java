@@ -1,4 +1,4 @@
-package com.example.zakol;
+package com.example.zakol.entity;
 
 public class Znamenitost {
 

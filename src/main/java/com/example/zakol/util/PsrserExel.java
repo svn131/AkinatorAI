@@ -1,5 +1,8 @@
-package com.example.zakol;
+package com.example.zakol.util;
 
+import com.example.zakol.entity.Vopros;
+import com.example.zakol.entity.Znamenitost;
+import com.example.zakol.repository.Repository;
 import jakarta.annotation.PostConstruct;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -20,10 +23,9 @@ public class PsrserExel {
     Repository repository;
 
 
-    List<Vopros> voprosyLst = new ArrayList<>() ;
+    List<Vopros> voprosyLst = new ArrayList<>();
 
-    List<Znamenitost>  znamenitostList = new ArrayList<>() ;
-
+    List<Znamenitost> znamenitostList = new ArrayList<>();
 
 
     public PsrserExel() {
@@ -55,9 +57,6 @@ public class PsrserExel {
             }
         }
 
-// Преобразование ArrayList в массив
-//        String[] firstRowArray = firstRowValues.toArray(new String[0]);
-
 
         // Парсинг значений первого столбца в массив
         int numRows = sheet.getLastRowNum() + 1;
@@ -75,15 +74,6 @@ public class PsrserExel {
             }
         }
 
-// Преобразование ArrayList в массив
-//        String[] firstColumnArray = firstColumnValues.toArray(new String[0]);
-
-
-
-
-
-
-
 
         // Вывод значений массивов
         System.out.println("Значения первой строки - знамиитости:");
@@ -97,7 +87,7 @@ public class PsrserExel {
 
 
         for (String value : firstColumnValues) {
-            Vopros vopros = new Vopros(nomerVoprosa,value);
+            Vopros vopros = new Vopros(nomerVoprosa, value);
             nomerVoprosa++;
             voprosyLst.add(vopros);
             System.out.println(value);
@@ -105,7 +95,6 @@ public class PsrserExel {
 
         repository.setZnamenitost(znamenitostList);
         repository.setVoprosy(voprosyLst);
-
 
 
         workbook.close();

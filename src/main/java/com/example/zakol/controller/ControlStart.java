@@ -1,4 +1,4 @@
-package com.example.zakol;
+package com.example.zakol.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
