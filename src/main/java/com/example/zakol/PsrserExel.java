@@ -1,26 +1,38 @@
 package com.example.zakol;
 
+import jakarta.annotation.PostConstruct;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class PsrserExel {
 
-    List<Vopros> voprosy ;
-
-    List<Znamenitost>  znamenitost ;
+    int nomerVoprosa = 1;
 
 
-    public PsrserExel(List<Vopros> voprosy, List<Znamenitost> znamenitost) {
-        this.voprosy = voprosy;
-        this.znamenitost = znamenitost;
+    @Autowired
+    Repository repository;
+
+
+    List<Vopros> voprosyLst = new ArrayList<>() ;
+
+    List<Znamenitost>  znamenitostList = new ArrayList<>() ;
+
+
+
+    public PsrserExel() {
+        Repository repository = new Repository();
+        this.repository = repository;
+
     }
 
-
-
+    @PostConstruct
     public void parsExel() throws Exception {
 
 
@@ -44,7 +56,7 @@ public class PsrserExel {
         }
 
 // Преобразование ArrayList в массив
-        String[] firstRowArray = firstRowValues.toArray(new String[0]);
+//        String[] firstRowArray = firstRowValues.toArray(new String[0]);
 
 
         // Парсинг значений первого столбца в массив
@@ -64,19 +76,37 @@ public class PsrserExel {
         }
 
 // Преобразование ArrayList в массив
-        String[] firstColumnArray = firstColumnValues.toArray(new String[0]);
+//        String[] firstColumnArray = firstColumnValues.toArray(new String[0]);
+
+
+
+
+
+
 
 
         // Вывод значений массивов
-        System.out.println("Значения первой строки:");
+        System.out.println("Значения первой строки - знамиитости:");
         for (String value : firstRowValues) {
+            Znamenitost znamenitost = new Znamenitost(value);
+            znamenitostList.add(znamenitost);
             System.out.println(value);
         }
 
         System.out.println("Значения первого столбца:");
+
+
         for (String value : firstColumnValues) {
+            Vopros vopros = new Vopros(nomerVoprosa,value);
+            nomerVoprosa++;
+            voprosyLst.add(vopros);
             System.out.println(value);
         }
+
+        repository.setZnamenitost(znamenitostList);
+        repository.setVoprosy(voprosyLst);
+
+
 
         workbook.close();
         file.close();

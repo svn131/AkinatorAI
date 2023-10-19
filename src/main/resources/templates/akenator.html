@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <title>Spring Security Example</title>
+</head>
+<body>
+<h1>Welcome to Index PAGE!</h1>
+
+<input type="button" value="Login" onclick="window.location.href ='login'" class="login">
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--  <title>Акинатор</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 style="text-align: center;">Акинатор</h1>-->
+<!--<div id="question" style="font-size: 20px; text-align: center; margin-bottom: 20px;"></div>-->
+<!--<img id="image" style="width: 300px; height: 300px; object-fit: cover; margin-bottom: 20px;" src="" alt="Изображение">-->
+<!--&lt;!&ndash;<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerYes()">ДА</button>&ndash;&gt;-->
+<!--&lt;!&ndash;<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕТ</button>&ndash;&gt;-->
+<!--<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;">ДА</button>-->
+<!--<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;">НЕТ</button>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--  <title>Акинатор</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 style="text-align: center;">Акинатор</h1>-->
+<!--<div id="question" style="font-size: 20px; text-align: center; margin-bottom: 20px;"></div>-->
+<!--<img id="image" style="width: 300px; height: 300px; object-fit: cover; margin-bottom: 20px;" src="" alt="Изображение">-->
+<!--&lt;!&ndash;<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerYes()">ДА</button>&ndash;&gt;-->
+<!--&lt;!&ndash;<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕТ</button>&ndash;&gt;-->
+<!--<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerYes()">ДА</button>-->
+<!--<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕТ</button>-->
+
+
+
+
+<!--<script>-->
+<!--    // Определение функций-->
+
+<!--    // Функция для отправки ответа "ДА" на сервер-->
+<!--    function answerYes() {-->
+<!--      sendAnswer("yes", true);-->
+<!--    }-->
+
+<!--    // Функция для отправки ответа "НЕТ" на сервер-->
+<!--    function answerNo() {-->
+<!--      sendAnswer("no", false);-->
+<!--    }-->
+
+<!--    // Функция для отправки ответа на сервер через AJAX-запрос-->
+<!--    function sendAnswer(answer, otvetBoolean) {-->
+<!--      var xhr = new XMLHttpRequest();-->
+<!--      xhr.onreadystatechange = function() {-->
+<!--        if (xhr.readyState === 4 && xhr.status === 200) {-->
+<!--          var response = JSON.parse(xhr.responseText);-->
+<!--          displayQuestion(response.question, response.image);-->
+<!--        }-->
+<!--      };-->
+<!--      xhr.open("POST", "/cycl", true);-->
+<!--      xhr.setRequestHeader("Content-Type", "application/json");-->
+<!--      xhr.send(JSON.stringify({ answer: answer, otvetBoolean: otvetBoolean }));-->
+<!--    }-->
+
+<!--    // Функция для отображения вопроса и изображения-->
+<!--    function displayQuestion(question, image) {-->
+<!--      document.getElementById("question").textContent = question;-->
+<!--      document.getElementById("image").src = image;-->
+<!--    }-->
+
+<!--    // Код для инициализации начального вопроса и изображения-->
+<!--    window.onload = function() {-->
+<!--      var xhr = new XMLHttpRequest();-->
+<!--      xhr.onreadystatechange = function() {-->
+<!--        if (xhr.readyState === 4 && xhr.status === 200) {-->
+<!--          var response = JSON.parse(xhr.responseText);-->
+<!--          displayQuestion(response.question, response.image);-->
+<!--        }-->
+<!--      };-->
+<!--      xhr.open("GET", "/", true);-->
+<!--      xhr.send();-->
+<!--    };-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->

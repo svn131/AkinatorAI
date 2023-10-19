@@ -1,42 +1,51 @@
-//package com.example.zakol;
-//
-//import org.aspectj.weaver.patterns.TypePatternQuestions;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.RestController;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//@RestController
-//public class QuestionController {
-//
-//    private static final List<TypePatternQuestions.Question> questions = new ArrayList<>(); // Список вопросов
-//
-//    // Конструктор для инициализации списка вопросов
-//    public QuestionController() {
-//        questions.add(new TypePatternQuestions.Question("Вопрос 1", "C:/images/1.jpg"));
-//        questions.add(new TypePatternQuestions.Question("Вопрос 2", "/images/2.jpg"));
-//        // Добавьте остальные вопросы и изображения
-//    }
-//
+package com.example.zakol;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
+
+
+@RestController
+public class QuestionController {
+
+    @Autowired
+     Repository repository;
+
+
+    public QuestionController() {
+    }
+@Autowired // todo Лишняя ?
+    // Конструктор для инициализации списка вопросов
+    public QuestionController(Repository repository) {
+
+        // Добавьте остальные вопросы и изображения
+    }
+
 //    // GET-запрос для получения начального вопроса и изображения
 //    @GetMapping("/")
-//    public TypePatternQuestions.Question getInitialQuestion() {
-//        return questions.get(0);
+//    public String getInitialQuestion() {
+//        System.out.println("Вызван getInitialQuestiongetInitialQuestiongetInitialQuestiongetInitialQuestion");
+//        return "Akenator.html";
 //    }
-//
-//    // POST-запрос для обработки ответов пользователя
-//    @PostMapping("/answer")
-//    public TypePatternQuestions.Question getNextQuestion(@RequestBody Answer answer) {
-//        int index = answer.getIndex();
-//        // Здесь вы можете добавить логику для выбора следующего вопроса на основе ответа пользователя
-//        if (index < questions.size()) {
-//            return questions.get(index);
-//        } else {
-//            // Возвращаем заглушку, если вопросы закончились
-//            return new TypePatternQuestions.Question("Спасибо за игру!", "");
-//        }
-//    }
-//}
+
+
+    // POST-запрос для обработки ответов пользователя
+    @PostMapping("/cycl")
+    public ResponseEntity<Vopros> getNextQuestion(@RequestBody Map<String, Object> requestBody) {
+        boolean otvetBoolean = (boolean) requestBody.get("otvetBoolean");
+        // Здесь вы можете добавить логику для выбора следующего вопроса на основе ответа пользователя
+        if (otvetBoolean) {
+            Vopros nextQuestion = repository.getVoprosy().get(2);
+            return ResponseEntity.ok(nextQuestion);
+        } else {
+            Vopros endGameResponse = new Vopros(3002, "Спасибо за игру!");
+            return ResponseEntity.ok(endGameResponse);
+        }
+
+    }
+
+}
