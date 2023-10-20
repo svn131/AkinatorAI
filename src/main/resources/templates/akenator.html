@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-<head>
-  <title>Spring Security Example</title>
-</head>
-<body>
-<h1>Welcome to Index PAGE!</h1>
-
-<input type="button" value="Login" onclick="window.location.href ='login'" class="login">
-</body>
-</html>
-
-
-
 <!--<!DOCTYPE html>-->
 <!--<html lang="en">-->
 <!--<head>-->
@@ -22,12 +7,10 @@
 <!--</head>-->
 <!--<body>-->
 <!--<h1 style="text-align: center;">Акинатор</h1>-->
-<!--<div id="question" style="font-size: 20px; text-align: center; margin-bottom: 20px;"></div>-->
-<!--<img id="image" style="width: 300px; height: 300px; object-fit: cover; margin-bottom: 20px;" src="" alt="Изображение">-->
-<!--&lt;!&ndash;<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerYes()">ДА</button>&ndash;&gt;-->
-<!--&lt;!&ndash;<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕТ</button>&ndash;&gt;-->
-<!--<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;">ДА</button>-->
-<!--<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;">НЕТ</button>-->
+<!--&lt;!&ndash;<div id="question" style="font-size: 20px; text-align: center; margin-bottom: 20px;"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;<img id="image" style="width: 300px; height: 300px; object-fit: cover; margin-bottom: 20px;" src="" alt="Изображение">&ndash;&gt;-->
+<!--<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerYes()">ДА</button>-->
+<!--<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕТ</button>-->
 
 <!--</body>-->
 <!--</html>-->
@@ -36,21 +19,21 @@
 
 
 
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--  <meta charset="UTF-8">-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-<!--  <title>Акинатор</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h1 style="text-align: center;">Акинатор</h1>-->
-<!--<div id="question" style="font-size: 20px; text-align: center; margin-bottom: 20px;"></div>-->
-<!--<img id="image" style="width: 300px; height: 300px; object-fit: cover; margin-bottom: 20px;" src="" alt="Изображение">-->
-<!--&lt;!&ndash;<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerYes()">ДА</button>&ndash;&gt;-->
-<!--&lt;!&ndash;<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕТ</button>&ndash;&gt;-->
-<!--<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerYes()">ДА</button>-->
-<!--<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕТ</button>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Акинатор</title>
+</head>
+<body>
+<h1 style="text-align: center;">Акинатор</h1>
+<div id="question" style="font-size: 20px; text-align: center; margin-bottom: 20px;"></div>
+<img id="image" style="width: 300px; height: 300px; object-fit: cover; margin-bottom: 20px;" src="" alt="Изображение">
+<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerYes()">ДА</button>
+<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕТ</button>
+<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerYes()">ДА</button>
+<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕТ</button>
 
 
 

@@ -3,12 +3,12 @@ package com.example.zakol.util;
 import com.example.zakol.entity.Vopros;
 import com.example.zakol.entity.Znamenitost;
 import com.example.zakol.repository.Repository;
-import jakarta.annotation.PostConstruct;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +34,7 @@ public class PsrserExel {
 
     }
 
-    @PostConstruct
+   @PostConstruct
     public void parsExel() throws Exception {
 
 
@@ -93,8 +93,8 @@ public class PsrserExel {
             System.out.println(value);
         }
 
-        repository.setZnamenitost(znamenitostList);
-        repository.setVoprosy(voprosyLst);
+        repository.setZnamenitostList(znamenitostList);
+        repository.setVoprosList(voprosyLst);
 
 
         workbook.close();

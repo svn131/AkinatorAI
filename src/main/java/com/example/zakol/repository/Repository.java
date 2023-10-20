@@ -5,29 +5,37 @@ import com.example.zakol.entity.Znamenitost;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Random;
 
-@Component
+@org.springframework.stereotype.Repository
 public class Repository {
 
 
-    List<Vopros> voprosy;
+    List<Vopros> voprosList;
 
-    List<Znamenitost> znamenitost;
+    List<Znamenitost> znamenitostList;
 
 
-    public List<Vopros> getVoprosy() {
-        return voprosy;
+
+
+    public List<Vopros> getVoprosList() {
+        return voprosList;
     }
 
-    public void setVoprosy(List<Vopros> voprosy) {
-        this.voprosy = voprosy;
+
+    public void setVoprosList(List<Vopros> voprosList) {
+        this.voprosList = voprosList;
     }
 
-    public List<Znamenitost> getZnamenitost() {
-        return znamenitost;
+    public List<Znamenitost> getZnamenitosty() {
+        return znamenitostList;
     }
+//    public Znamenitost getZnamenitostList() {
+//        Random random = new Random(2);
+//        return znamenitostList.get(random);
+//    }
 
-    public void setZnamenitost(List<Znamenitost> znamenitost) {
-        this.znamenitost = znamenitost;
+    public void setZnamenitostList(List<Znamenitost> znamenitostList) {
+        this.znamenitostList = znamenitostList;
     }
 }

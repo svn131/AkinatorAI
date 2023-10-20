@@ -34,10 +34,12 @@ public class QuestionController {
     // POST-запрос для обработки ответов пользователя
     @PostMapping("/cycl")
     public ResponseEntity<Vopros> getNextQuestion(@RequestBody Map<String, Object> requestBody) {
+        System.out.println("Siiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+
         boolean otvetBoolean = (boolean) requestBody.get("otvetBoolean");
         // Здесь вы можете добавить логику для выбора следующего вопроса на основе ответа пользователя
         if (otvetBoolean) {
-            Vopros nextQuestion = repository.getVoprosy().get(2);
+            Vopros nextQuestion = repository.getVoprosList().get(2);
             return ResponseEntity.ok(nextQuestion);
         } else {
             Vopros endGameResponse = new Vopros(3002, "Спасибо за игру!");
