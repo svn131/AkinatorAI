@@ -13,13 +13,19 @@
 <h1 style="text-align: center;">${vopros.getAttribute}</h1>
 
 <div id="question" style="font-size: 20px; text-align: center; margin-bottom: 20px;"></div>
-<img id="image" style="width: 300px; height: 300px; object-fit: cover; margin-bottom: 20px;"
-th:src="@{/images/qqq.jpg}" />
+<img id="image" style="width: 300px; height: 300px; object-fit: cover; margin-bottom: 80px;" src="./images/qqq.jpg" />
+
+
+<!--<img class="button-profile__img" src="./images/qqq.jpg" alt="Профиль">-->
 
 
 <button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerYes()">ДА</button>
+
+<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕЗНАЮ</button>
+
 <button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕТ</button>
-<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerYes()">ДА</button>
-<button class="button" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #3498db; color: #fff; cursor: pointer; border: none; border-radius: 5px; margin-right: 10px;" onclick="answerNo()">НЕТ</button>
+
+
+
 </body>
 </html>

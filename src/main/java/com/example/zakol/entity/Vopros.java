@@ -4,10 +4,13 @@ package com.example.zakol.entity;
 //import org.springframework.stereotype.Component;
 
 
+import org.springframework.context.annotation.Scope;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
+@Scope("prototype")
 public class Vopros {
 
    @Id
